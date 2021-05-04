@@ -13,7 +13,7 @@ Add the following arguments to the build configuration:
 
 ```bash
 target_os = "android"
-target_cpu = "arm64"
+target_cpu = "arm"
 is_debug = false
 is_official_build = true
 system_webview_package_name = "com.revrobotics.webview"
@@ -29,13 +29,13 @@ Look for the version where the OS is `android` and channel is `stable` or [query
 
 Make sure you are in _~/chromium/src/_ and that the repository is up to date:
 ```bash
-git pull
+git rebase-update
 ```
 
 Checkout the latest stable version:
 
 ```bash
-git checkout <version> -b latest
+git checkout <version>
 ```
 
 Update the Android dependencies:
