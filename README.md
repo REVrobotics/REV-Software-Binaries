@@ -9,7 +9,7 @@ Run the following command in _~/chromium/src/_ to edit the build configuration:
 gn args out/Default
 ```
 
-Add the following arguments to the build configuration:
+Add the following arguments to the build configuration (you'll need to specify the real keystore password):
 
 ```bash
 target_os = "android"
@@ -25,6 +25,9 @@ use_official_google_api_keys = false
 android_channel = "stable"
 system_webview_package_name = "com.revrobotics.webview"
 chrome_public_manifest_package = "com.revrobotics.chromium"
+default_android_keystore_path = "~/Software-Update-Metadata/fdroid/AndroidAppKeystore.jks"
+default_android_keystore_name = "key"
+default_android_keystore_password = "INSERT_KEYSTORE_PASSWORD_HERE"
 ```
 
 Once you save and quit the editor, the targets for the files will be automatically updated.
@@ -52,6 +55,11 @@ gclient sync
 ```
 
 ## Build Chromium and Webview
+
+You'll need to have the [Software-Update-Metadata](https://github.com/REVrobotics/Software-Update-Metadata) repo cloned in your home directory,
+with the F-Droid repo set up as described in [this README file](https://github.com/REVrobotics/Software-Update-Metadata/blob/master/fdroid/README.md)
+so that the Chromium build can access the `AndroidAppKeystore.jks` file.
+
 Make sure you are in _~/chromium/src/_
 
 Build Chromium:
