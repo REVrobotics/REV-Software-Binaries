@@ -25,9 +25,9 @@ use_official_google_api_keys = false
 android_channel = "stable"
 system_webview_package_name = "com.revrobotics.webview"
 chrome_public_manifest_package = "com.revrobotics.chromium"
-default_android_keystore_path = "~/Software-Update-Metadata/fdroid/AndroidAppKeystore.jks"
-default_android_keystore_name = "key"
-default_android_keystore_password = "INSERT_KEYSTORE_PASSWORD_HERE"
+android_keystore_path = "~/Software-Update-Metadata/fdroid/AndroidAppKeystore.jks"
+android_keystore_name = "key"
+android_keystore_password = "INSERT_KEYSTORE_PASSWORD_HERE"
 ```
 
 Once you save and quit the editor, the targets for the files will be automatically updated.
