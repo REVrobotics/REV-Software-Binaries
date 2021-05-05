@@ -16,6 +16,13 @@ target_os = "android"
 target_cpu = "arm"
 is_debug = false
 is_official_build = true
+use_errorprone_java_compiler = false
+disable_android_lint = true
+fieldtrial_testing_like_official_build = true
+is_component_build = false
+is_chrome_branded = false
+use_official_google_api_keys = false
+android_channel = "stable"
 system_webview_package_name = "com.revrobotics.webview"
 chrome_public_manifest_package = "com.revrobotics.chromium"
 ```
