@@ -25,7 +25,7 @@ use_official_google_api_keys = false
 android_channel = "stable"
 system_webview_package_name = "com.revrobotics.webview"
 chrome_public_manifest_package = "com.revrobotics.chromium"
-android_keystore_path = "~/Software-Update-Metadata/fdroid/AndroidAppKeystore.jks"
+android_keystore_path = "//../../Software-Update-Metadata/fdroid/AndroidAppKeystore.jks"
 android_keystore_name = "key"
 android_keystore_password = "INSERT_KEYSTORE_PASSWORD_HERE"
 ```
@@ -56,7 +56,7 @@ gclient sync
 
 ## Build Chromium and Webview
 
-You'll need to have the [Software-Update-Metadata](https://github.com/REVrobotics/Software-Update-Metadata) repo cloned in your home directory,
+You'll need to have the [Software-Update-Metadata](https://github.com/REVrobotics/Software-Update-Metadata) repo cloned next to the `~/chromium` directory,
 with the F-Droid repo set up as described in [this README file](https://github.com/REVrobotics/Software-Update-Metadata/blob/master/fdroid/README.md)
 so that the Chromium build can access the `AndroidAppKeystore.jks` file.
 
