@@ -19,7 +19,7 @@ git tag -l | xargs git tag -d
 git fetch https://$GITHUB_TOKEN:x-oauth-basic@$BASE_GIT master --tags
 
 # Exit if current tag matches latest stable version
-CURRENT_VERSION=$(git describe --tags `git rev-list --tags --max-count=1`) |:
+CURRENT_VERSION=$(git describe --tags `git rev-list --tags --max-count=1`) ||:
 if [[ $CURRENT_VERSION == $LATEST_VERSION ]]; then
     echo "$CURRENT_VERSION is already the latest version"
     exit 0
@@ -30,6 +30,8 @@ echo "New release found: $LATEST_VERSION"
 cd $CHROMIUM_DIR
 
 # Get latest commits
+git reset --hard
+git clean -f
 git rebase-update
 
 # Checkout latest stable version
@@ -39,10 +41,10 @@ git checkout $LATEST_VERSION
 gclient sync -D
 
 # Build Chromium
-autoninja -C out/Default chrome_public_apk || exit 1
+autoninja -C out/Default chrome_public_apk
 
 # Build Webview
-autoninja -C out/Default system_webview_apk || exit 1
+autoninja -C out/Default system_webview_apk
 
 # Make release
 RELEASE=$(curl \
