@@ -1,5 +1,7 @@
 set -e
 
+PATH=$PATH:/home/rev/workspace/fdroidserver/:/home/rev/depot_tools
+
 BASE_DIR=/home/rev/REV-Chromium-Builds
 BASE_GIT=github.com/REVrobotics/REV-Chromium-Builds.git
 CHROMIUM_DIR=/home/rev/chromium/src
@@ -32,6 +34,7 @@ cd $CHROMIUM_DIR
 # Get latest commits
 git reset --hard
 git clean -f
+git clean -fd
 git rebase-update
 
 # Checkout latest stable version
@@ -81,6 +84,7 @@ WEBVIEW_URL=$(curl \
 cd $METADATA_DIR
 git reset --hard origin/master
 git clean -f
+git clean -fd
 git pull https://$GITHUB_TOKEN:x-oauth-basic@$METADATA_GIT master
 
 # Update _redirects
