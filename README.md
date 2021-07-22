@@ -3,3 +3,4 @@ The [releases](https://github.com/REVrobotics/REV-Software-Binaries/releases) pa
 * Driver Hub OS
 * Chromium
 * Android WebView
+* REV Hardware Client
