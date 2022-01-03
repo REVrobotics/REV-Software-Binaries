@@ -6,3 +6,5 @@ The [releases](https://github.com/REVrobotics/REV-Software-Binaries/releases) pa
 * Android WebView (for Driver Hub)
 * REV Hardware Client
 * REVLib (for FRC)
+* Pneumatic Hub Firmware
+* Power Distribution Hub Firmware
