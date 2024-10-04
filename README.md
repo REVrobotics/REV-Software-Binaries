@@ -8,3 +8,5 @@ The [releases](https://github.com/REVrobotics/REV-Software-Binaries/releases) pa
 * REVLib (for FRC)
 * Pneumatic Hub Firmware
 * Power Distribution Hub Firmware
+* SPARK MAX
+* SPARK Flex
